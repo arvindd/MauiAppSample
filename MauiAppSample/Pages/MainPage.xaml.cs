@@ -14,13 +14,7 @@ public partial class MainPage : BasePage<MainPageViewModel>
 
 		this.WhenActivated(disposable =>
 		{
-			this.Bind(ViewModel, x => x.Greeting, x => x.LblGreeting.Text)
-				.DisposeWith(disposable);
-
-			this.Bind(ViewModel, x => x.Welcome, x => x.LblWelcome.Text)
-				.DisposeWith(disposable);
-
-			this.OneWayBind(ViewModel, x => x.TemperatureValues, x => x.LstTempValues.ItemsSource)
+			this.OneWayBind(ViewModel, x => x.LocationList, x => x.LstLocations.ItemsSource)
 				.DisposeWith(disposable);
 
 			this.BindCommand(ViewModel, x => x.StartReadingCommand, x => x.BtnStart)

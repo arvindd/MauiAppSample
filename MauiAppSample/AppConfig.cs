@@ -14,12 +14,12 @@ namespace MauiAppSample
         public static void ConfigureServices()
         {
             // Register all services
-            Locator.CurrentMutable.RegisterConstant<TemperatureSensor>(new MockTemperatureSensor());
+            Locator.CurrentMutable.RegisterConstant<LocationSensor>(new MockLocationSensor());
 
             // Make these services available to all other classes
-            TemperatureSensor = Locator.Current.GetService<TemperatureSensor>();
+            LocationSensor = Locator.Current.GetService<LocationSensor>();
         }
 
-        public static TemperatureSensor TemperatureSensor { get; private set; }
+        public static LocationSensor LocationSensor { get; private set; }
     }
 }

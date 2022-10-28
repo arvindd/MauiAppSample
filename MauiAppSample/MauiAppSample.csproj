@@ -53,4 +53,16 @@
 	  <PackageReference Include="Splat.Serilog" Version="14.4.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Views\LocationViewCell.xaml.cs">
+	    <DependentUpon>LocationViewCell.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\LocationViewCell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

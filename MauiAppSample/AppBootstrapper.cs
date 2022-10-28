@@ -11,6 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MauiAppSample.Views;
 
 namespace MauiAppSample
 {
@@ -42,6 +43,7 @@ namespace MauiAppSample
 
             // Register all views with their view models
             Locator.CurrentMutable.Register(() => new MainPage(), typeof(IViewFor<MainPageViewModel>));
+            Locator.CurrentMutable.Register(() => new LocationViewCell(), typeof(IViewFor<LocationViewModel>));
 
             // Navigates to the main page, and resets the navigation stack
             Router

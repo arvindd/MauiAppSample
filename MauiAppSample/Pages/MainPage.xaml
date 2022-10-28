@@ -4,7 +4,8 @@
              x:Class="MauiAppSample.Pages.MainPage"
              x:TypeArguments="vm:MainPageViewModel"                
              xmlns:pages="clr-namespace:MauiAppSample.Pages"
-             xmlns:vm="clr-namespace:MauiAppSample.ViewModels">
+             xmlns:vm="clr-namespace:MauiAppSample.ViewModels"
+             xmlns:view="clr-namespace:MauiAppSample.Views">
 
     <ScrollView>
         <VerticalStackLayout
@@ -18,27 +19,20 @@
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
-            <Label
-                x:Name="LblGreeting"
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                x:Name="LblWelcome"
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <ListView x:Name="LstTempValues"/>
+            <ScrollView>
+                <ListView x:Name="LstLocations" HorizontalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <view:LocationViewCell/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
 
             <Button
                 x:Name="BtnStart"
-                Text="Start Reading Temperature"
-                SemanticProperties.Hint="Starts reading temperature values"
+                Text="Track location"
+                SemanticProperties.Hint="Starts tracking current location"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
