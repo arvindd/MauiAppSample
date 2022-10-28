@@ -13,9 +13,9 @@ public partial class LocationViewCell : BaseViewCell<LocationViewModel>
 
         this.WhenActivated(disposables =>
         {
-            this.OneWayBind(ViewModel, x => x.Latitude, x => x.LatitudeDisplay.Text)
+            this.OneWayBind(ViewModel, vm => vm.Latitude, v => v.LatitudeDisplay.Text)
                 .DisposeWith(disposables);
-            this.OneWayBind(ViewModel, x => x.Longitude, x => x.LongitudeDisplay.Text)
+            this.OneWayBind(ViewModel, vm => vm.Longitude, v => v.LongitudeDisplay.Text)
                 .DisposeWith(disposables);
         });
     }

@@ -14,13 +14,13 @@ public partial class MainPage : BasePage<MainPageViewModel>
 
 		this.WhenActivated(disposable =>
 		{
-			this.OneWayBind(ViewModel, x => x.LocationList, x => x.LstLocations.ItemsSource)
+			this.OneWayBind(ViewModel, vm => vm.LocationList, v => v.LstLocations.ItemsSource)
 				.DisposeWith(disposable);
 
-			this.BindCommand(ViewModel, x => x.StartReadingCommand, x => x.BtnStart)
+			this.BindCommand(ViewModel, vm => vm.StartReadingCommand, v => v.BtnStart)
                 .DisposeWith(disposable);
 
-			this.WhenAnyValue(x => x.ViewModel.StartReadingCommand)
+			this.WhenAnyValue(vm => vm.ViewModel.StartReadingCommand)
 				.Subscribe();
         });
 	}
