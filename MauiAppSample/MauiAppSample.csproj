@@ -55,12 +55,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\MainPage.xaml.cs">
+	    <DependentUpon>MainPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\TemperaturePage.xaml.cs">
+	    <DependentUpon>TemperaturePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\LocationViewCell.xaml.cs">
 	    <DependentUpon>LocationViewCell.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\TemperaturePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\LocationViewCell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

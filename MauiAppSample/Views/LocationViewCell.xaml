@@ -2,7 +2,7 @@
 <views:BaseViewCell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppSample.Views.LocationViewCell"
-             x:TypeArguments="vm:LocationViewModel"
+             x:TypeArguments="vm:LocationViewCellVM"
              xmlns:rxui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
              xmlns:vm="clr-namespace:MauiAppSample.ViewModels"
              xmlns:views="clr-namespace:MauiAppSample.Views">

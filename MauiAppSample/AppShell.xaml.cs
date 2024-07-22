@@ -1,8 +1,14 @@
-﻿namespace MauiAppSample;
+﻿using AndroidX.Lifecycle;
+using MauiAppSample.ViewModels;
+using ReactiveUI;
+using ReactiveUI.Maui;
+using Splat;
 
-public partial class AppShell : Shell
+namespace MauiAppSample;
+
+public partial class AppShell: ReactiveShell<AppShellViewModel>
 {
-	public AppShell()
+	public AppShell() 
 	{
 		InitializeComponent();
 	}

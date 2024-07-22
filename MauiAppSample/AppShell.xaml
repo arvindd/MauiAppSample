@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
+<rx:ReactiveShell
     x:Class="MauiAppSample.AppShell"
+    x:TypeArguments="vm:AppShellViewModel"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:pages="clr-namespace:MauiAppSample.Pages"
+    xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+    xmlns:pages="clr-namespace:MauiAppSample.Pages"    
+    xmlns:vm="clr-namespace:MauiAppSample.ViewModels"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
+    <TabBar>
+        <ShellContent
+        Title="Location"
         ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="MainPage" />
+        Route="pages:MainPage" />
+        
+        <ShellContent
+        Title="Temperature"
+        ContentTemplate="{DataTemplate pages:TemperaturePage}"
+        Route="pages:TemperaturePage" />        
+    </TabBar>
 
-</Shell>
+</rx:ReactiveShell>

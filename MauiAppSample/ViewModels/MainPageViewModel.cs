@@ -38,7 +38,7 @@ public class MainPageViewModel : BaseViewModel
         StartReadingCommand                             // <-- Running on a TaskpoolScheduler
             .SubscribeOn(RxApp.TaskpoolScheduler)       // <-- Running on a TaskpoolScheduler
             .ObserveOn(RxApp.TaskpoolScheduler)         // <-- Running on a TaskpoolScheduler 
-            .Transform(x => new LocationViewModel(x))   // <-- Running on a TaskpoolScheduler
+            .Transform(x => new LocationViewCellVM(x))   // <-- Running on a TaskpoolScheduler
             .DisposeMany()                              // <-- Running on a TaskpoolScheduler
             .ObserveOn(RxApp.MainThreadScheduler)       // <-- Running on a TaskpoolScheduler
             .Bind(out _locationList)                    // <-- Running on the main (GUI) thread
@@ -50,8 +50,8 @@ public class MainPageViewModel : BaseViewModel
             .Subscribe(x => this.Log().Warn($"Exception thrown: {x.Message}"));
     }
 
-    private readonly ReadOnlyObservableCollection<LocationViewModel> _locationList;
-    public ReadOnlyObservableCollection<LocationViewModel> LocationList => _locationList;
+    private readonly ReadOnlyObservableCollection<LocationViewCellVM> _locationList;
+    public ReadOnlyObservableCollection<LocationViewCellVM> LocationList => _locationList;
 
     private LocationSensor LocationSensor { get; }
 

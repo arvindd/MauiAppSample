@@ -5,7 +5,7 @@ using ReactiveUI;
 using ReactiveUI.Maui;
 using System.Reactive.Disposables;
 
-public partial class LocationViewCell : BaseViewCell<LocationViewModel>
+public partial class LocationViewCell : BaseViewCell<LocationViewCellVM>
 {
 	public LocationViewCell()
 	{

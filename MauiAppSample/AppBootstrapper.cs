@@ -42,13 +42,15 @@ namespace MauiAppSample
             AppConfig.ConfigureServices();
 
             // Register all views with their view models
+            Locator.CurrentMutable.Register(() => new AppShell(), typeof(IViewFor<AppShellViewModel>));
             Locator.CurrentMutable.Register(() => new MainPage(), typeof(IViewFor<MainPageViewModel>));
-            Locator.CurrentMutable.Register(() => new LocationViewCell(), typeof(IViewFor<LocationViewModel>));
+            Locator.CurrentMutable.Register(() => new LocationViewCell(), typeof(IViewFor<LocationViewCellVM>));
+            Locator.CurrentMutable.Register(() => new TemperaturePage(), typeof(IViewFor<TemperaturePageViewModel>));
 
             // Navigates to the main page, and resets the navigation stack
             Router
                .NavigateAndReset
-               .Execute(new MainPageViewModel())
+               .Execute(new AppShellViewModel())
                .Subscribe();
 
             return this;

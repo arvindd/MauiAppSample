@@ -7,9 +7,9 @@ using Location = MauiAppSample.Models.Location;
 
 namespace MauiAppSample.ViewModels
 {
-    public class LocationViewModel: BaseViewModel
+    public class LocationViewCellVM: BaseViewModel
     {
-        public LocationViewModel(Location loc) : base("Location") 
+        public LocationViewCellVM(Location loc) : base("Location") 
         { 
             _location = loc;
         }

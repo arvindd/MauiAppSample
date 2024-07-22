@@ -43,9 +43,19 @@ The sample is heavily influenced by a superb sample in the ReactiveUI -
 [[https://github.com/reactiveui/ReactiveUI.Samples/tree/main/Xamarin/Cinephile][Cinephile]].
 Cinephile is done for Xamarin, while this sample is for MAUI.
 
-* Decisions
+* Generic flow of any MAUI App
+:PROPERTIES:
+:CUSTOM_ID:       generic-flow-of-any-maui-app
+:END:
+Before we get into how our sample works, we'll first understand how a generic MAUI application flow is:
 
+[[./img/maui-flow.drawio.svg]]
 
+* Our Sample
+:PROPERTIES:
+:CUSTOM_ID:       our-sample
+:END:
+Our sample follows exactly the same flow - just that we use Reactive versions of Shell, ShellContent and ContentPage. All our classes are derived from these reactive versions.
 
 * How to...
 :PROPERTIES:
